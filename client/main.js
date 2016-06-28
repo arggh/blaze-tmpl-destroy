@@ -17,9 +17,6 @@ Template.row.helpers({
     return Columns.find({
       rowId: this.r._id
     });
-  },
-  onDestroyed() {
-    console.log('Destroying')
   }
 });
 
