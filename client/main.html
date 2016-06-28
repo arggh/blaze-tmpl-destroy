@@ -1,0 +1,70 @@
+<head>
+  <title>blaze-tmpl-destroy</title>
+</head>
+
+<body>
+  {{>nav}}
+</body>
+
+<template name="nav">
+  <button id="showList">Show list</button>
+  <button id="hideList">Hide list</button>
+
+  {{#if showList}}
+    {{>list}}
+  {{else}}
+    Hello.
+  {{/if}}
+</template>
+
+<template name="row">
+  <tr>
+    <td style="background: #ccc">{{>header text=r.name}}</td>
+  </tr>
+  <tr>
+    {{#if Template.subscriptionsReady}}
+      {{#each columns}}
+        {{>column c=this}}
+        {{>column2 c=this}}
+        {{>column3 c=this}}
+      {{/each}}
+    {{/if}}
+  </tr>
+</template>
+
+<template name="column">
+  <td>
+    <img src="{{c.src}}">
+    {{name}}
+  </td>
+</template>
+
+<template name="column2">
+  <td>
+    <img src="{{c.src}}">
+    {{name}}
+  </td>
+</template>
+
+<template name="column3">
+  <td>
+    <img src="{{c.src}}">
+    {{name}}
+  </td>
+</template>
+
+<template name="header">
+  <h1>{{text}}</h1>
+</template>
+
+<template name="list">
+  <table>
+    <tbody>
+      {{#if Template.subscriptionsReady}}
+        {{#each rows}}
+          {{>row r=this}}
+        {{/each}}
+      {{/if}}
+    </tbody>
+  </table>
+</template>

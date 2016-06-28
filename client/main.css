@@ -1,0 +1,5 @@
+/* CSS declarations go here */
+td {
+  max-width: 3rem;
+  overflow: hidden;
+}
