@@ -1,20 +1,12 @@
-<head>
-  <title>blaze-tmpl-destroy</title>
-</head>
+<template name="mainLayout">
+  <a href="/list">Show list</a>
+  <a href="/">Hide list</a>
 
-<body>
-  {{>nav}}
-</body>
+  {{> Template.dynamic template=tmpl}}
+</template>
 
-<template name="nav">
-  <button id="showList">Show list</button>
-  <button id="hideList">Hide list</button>
-
-  {{#if showList}}
-    {{>list}}
-  {{else}}
-    Hello.
-  {{/if}}
+<template name="hello">
+  Hello
 </template>
 
 <template name="row">

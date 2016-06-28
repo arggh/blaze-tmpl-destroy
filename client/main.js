@@ -1,4 +1,4 @@
-Template.list.onCreated(function listOnCreated() {
+Template.mainLayout.onCreated(function listOnCreated() {
   if (!Rows.findOne()) {
     for (let i = 0; i < 450; i++) {
       const row = {
