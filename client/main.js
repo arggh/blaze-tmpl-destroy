@@ -1,6 +1,6 @@
 Template.list.onCreated(function listOnCreated() {
   if (!Rows.findOne()) {
-    for (let i = 0; i < 450; i++) {
+    for (let i = 0; i < 550; i++) {
       const row = {
         name: Random.id(40),
         name1: Random.id(40),
@@ -53,6 +53,12 @@ Template.column.helpers({
   name() {
     const key = Random.choice(['name','name1','name2','name3','name4','name5','name6','name7','name8','name9'])
     return this.c[key];
+  }
+});
+
+Template.column.events({
+  'click td'(event, instance) {
+    console.log('Column clicked, event fired');
   }
 });
 
